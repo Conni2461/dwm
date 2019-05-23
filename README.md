@@ -53,3 +53,4 @@ and (re)compiling the source code.
 - [Alpha](https://dwm.suckless.org/patches/alpha/dwm-alpha-20180613-b69c870.diff): Allow dwm to have translucent bars, while keeping all the text on it opaque
 - [Autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff): This patch will make dwm run "\~/.dwm/autostart_blocking.sh" and "\~/.dwm/autostart.sh &" before entering the handler loop. One or both of these files can be ommited. Be aware that dwm will not startup as long as autostart_blocking.sh is running and will stay completely unresponsive.
 - [Uselessgap](https://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-6.1.diff): Added gaps to dwm. Change gap size in config.h
+- [Statuspadding](https://dwm.suckless.org/patches/statuspadding/dwm-statuspadding-20150524-c8e9479.diff): This makes the amount of horizontal and vertical padding in the status bar into configurable options.
