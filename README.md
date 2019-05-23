@@ -56,3 +56,4 @@ and (re)compiling the source code.
 - [Statuspadding](https://dwm.suckless.org/patches/statuspadding/dwm-statuspadding-20150524-c8e9479.diff): This makes the amount of horizontal and vertical padding in the status bar into configurable options.
 - [Rotatestack](https://dwm.suckless.org/patches/rotatestack/dwm-rotatestack-20161021-ab9571b.diff): Stack rotation moves a client from the bottom to the top of the stack (or the other way round). This effectively rotates the clients by one position clockwise (or CCW, respectively).
 - [Attachaside](https://dwm.suckless.org/patches/attachaside/dwm-attachaside-20180126-db22360.diff): Make new clients get attached and focused in the stacking area instead of always becoming the new master.
+- [Cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff): Cycles through all avaiable layouts using MOD-CTRL-, and MOD-CTRL-.
