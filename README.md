@@ -50,4 +50,5 @@ and (re)compiling the source code.
 
 ## Applied Patches
 
-
+- [Alpha](https://dwm.suckless.org/patches/alpha/dwm-alpha-20180613-b69c870.diff): Allow dwm to have translucent bars, while keeping all the text on it opaque
+-
