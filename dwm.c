@@ -216,6 +216,7 @@ static void setmfact(const Arg *arg);
 static void setup(void);
 static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
+static void catchsig(int signal);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
@@ -1664,6 +1665,7 @@ setup(void)
 
 	/* clean up any zombies immediately */
 	sigchld(0);
+        signal(SIGINT, catchsig);
 
 	/* init screen */
 	screen = DefaultScreen(dpy);
@@ -1756,6 +1758,14 @@ showhide(Client *c)
 		showhide(c->snext);
 		XMoveWindow(dpy, c->win, WIDTH(c) * -2, c->y);
 	}
+}
+
+void
+catchsig(int signal)
+{
+        fprintf(stderr, "here");
+        if (signal == 10)
+                quit(0);
 }
 
 void
@@ -1944,8 +1954,8 @@ updatebars(void)
 		if (m->barwin)
 			continue;
 		m->barwin = XCreateWindow(dpy, root, m->wx, m->by, m->ww, bh, 0, depth,
-		                          InputOutput, visual,
-		                          CWOverrideRedirect|CWBackPixel|CWBorderPixel|CWColormap|CWEventMask, &wa);
+								  InputOutput, visual,
+								  CWOverrideRedirect|CWBackPixel|CWBorderPixel|CWColormap|CWEventMask, &wa);
 		XDefineCursor(dpy, m->barwin, cursor[CurNormal]->cursor);
 		XMapRaised(dpy, m->barwin);
 		XSetClassHint(dpy, m->barwin, &ch);

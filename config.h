@@ -12,8 +12,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 6;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 0;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "monospace:size=15" };
-static const char dmenufont[]       = "monospace:size=15";
+static const char *fonts[]          = { "monospace:size=17" };
+static const char dmenufont[]       = "monospace:size=17";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -80,6 +80,7 @@ static const char *termcmd[]            = { "st", NULL };
 static const char *volup[]              = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldown[]            = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *voltoggle[]          = { "pactl", "set-sink-volume", "0", "toggle", NULL };
+static const char *exitdwm[]                    = { "rdq", "Are you sure you want to exit dwm?", "pkill -RTMIN+10 dwm", NULL };
 static const char *shutdowncmd[]        = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", NULL };
 static const char *rebootcmd[]          = { "rdq", "Are you sure you want to reboot?", "reboot", NULL };
 static const char *nnn[]                = { "st", "-e", "nnn", NULL };
@@ -125,9 +126,9 @@ static Key keys[] = {
         { MODKEY,               XK_period,              focusmon,       {.i = +1 } },
         { MODKEY|ShiftMask,     XK_comma,               tagmon,         {.i = -1 } },
         { MODKEY|ShiftMask,     XK_period,              tagmon,         {.i = +1 } },
-	{ MODKEY,               XK_minus,               setgaps,        {.i = -1 } },
-	{ MODKEY,               XK_equal,               setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,     XK_equal,               setgaps,        {.i = 0  } },
+        { MODKEY,               XK_minus,               setgaps,        {.i = -1 } },
+        { MODKEY,               XK_equal,               setgaps,        {.i = +1 } },
+        { MODKEY|ShiftMask,     XK_equal,               setgaps,        {.i = 0  } },
         TAGKEYS(                XK_1,                                   0)
         TAGKEYS(                XK_2,                                   1)
         TAGKEYS(                XK_3,                                   2)
@@ -138,9 +139,9 @@ static Key keys[] = {
         TAGKEYS(                XK_8,                                   7)
         TAGKEYS(                XK_9,                                   8)
 
+        { DMODKEY,              XK_e,                   spawn,          {.v = exitdwm } },
         { DMODKEY,              XK_x,                   spawn,          {.v = shutdowncmd } },
         { DMODKEY,              XK_Escape,              spawn,          {.v = rebootcmd } },
-        { DMODKEY,              XK_e,                   quit,           {0} },
         { 0,                    XF86AudioRaiseVolume,   spawn,          {.v = volup } },
         { 0,                    XF86AudioLowerVolume,   spawn,          {.v = voldown } },
         { 0,                    XF86AudioMute,          spawn,          {.v = voltoggle } },
