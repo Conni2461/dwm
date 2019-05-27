@@ -40,10 +40,11 @@ static const Rule rules[] = {
          *      WM_CLASS(STRING) = instance, class
          *      WM_NAME(STRING) = title
          */
-        /* class                instance    title       tags mask     isfloating   monitor */
-        { "alsamixer",          NULL,       NULL,       0,            1,           -1 },
-        { "Nitrogen",           NULL,       NULL,       0,            1,           -1 },
-        { "Lxappearance",       NULL,       NULL,       0,            1,           -1 },
+        /* class                instance        title           tags mask       iscentered      isfloating      monitor */
+        { "floatw",             NULL,           NULL,           0,              1,              1,              -1 },
+        { "alsamixer",          NULL,           NULL,           0,              1,              1,              -1 },
+        { "Nitrogen",           NULL,           NULL,           0,              1,              1,              -1 },
+        { "Lxappearance",       NULL,           NULL,           0,              1,              1,              -1 },
 };
 
 /* layout(s) */
@@ -80,17 +81,15 @@ static const char *termcmd[]            = { "st", NULL };
 static const char *volup[]              = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldown[]            = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *voltoggle[]          = { "pactl", "set-sink-volume", "0", "toggle", NULL };
-static const char *exitdwm[]                    = { "rdq", "Are you sure you want to exit dwm?", "pkill -RTMIN+10 dwm", NULL };
+static const char *exitdwm[]            = { "rdq", "Are you sure you want to exit dwm?", "pkill -RTMIN+10 dwm", NULL };
 static const char *shutdowncmd[]        = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", NULL };
 static const char *rebootcmd[]          = { "rdq", "Are you sure you want to reboot?", "reboot", NULL };
-static const char *nnn[]                = { "st", "-e", "nnn", NULL };
-static const char *nvim[]               = { "st", "-e", "nvim", NULL };
-static const char *newsboat[]           = { "st", "-e", "newsboat", NULL };
-static const char *neomutt[]            = { "st", "-e", "neomutt", NULL };
-static const char *slack[]              = { "st", "-e", "weechat", NULL };
-static const char *alsa[]               = { "st", "-e", "alsamixer", NULL };
+static const char *nnn[]                = { "st", "-c", "floatw", "-e", "nnn", NULL };
+static const char *newsboat[]           = { "st", "-c", "floatw", "-e", "newsboat", NULL };
+static const char *neomutt[]            = { "st", "-c", "floatw", "-e", "neomutt", NULL };
+static const char *slack[]              = { "st", "-c", "floatw", "-e", "weechat", NULL };
+static const char *alsa[]               = { "st", "-c", "floatw", "-e", "alsamixer", NULL };
 static const char *firefox[]            = { "firefox", NULL };
-static const char *trello[]             = { "surf", "trello.com", NULL };
 
 static Key keys[] = {
         /* modifier             key                     function        argument */
