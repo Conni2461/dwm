@@ -40,11 +40,10 @@ static const Rule rules[] = {
          *      WM_CLASS(STRING) = instance, class
          *      WM_NAME(STRING) = title
          */
-        /* class                instance        title           tags mask       iscentered      isfloating      monitor */
-        { "floatw",             NULL,           NULL,           0,              1,              1,              -1 },
-        { "alsamixer",          NULL,           NULL,           0,              1,              1,              -1 },
-        { "Nitrogen",           NULL,           NULL,           0,              1,              1,              -1 },
-        { "Lxappearance",       NULL,           NULL,           0,              1,              1,              -1 },
+        /* class                instance        title           tags mask       iscentered      isfloating      width   height  monitor */
+        { "floatw",             NULL,           NULL,           0,              1,              1,              2000,   1000,   -1 },
+        { "Nitrogen",           NULL,           NULL,           0,              1,              1,              2000,   1000,   -1 },
+        { "Lxappearance",       NULL,           NULL,           0,              1,              1,              2000,   1000,   -1 },
 };
 
 /* layout(s) */
@@ -88,7 +87,7 @@ static const char *nnn[]                = { "st", "-c", "floatw", "-e", "nnn", N
 static const char *newsboat[]           = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]            = { "st", "-c", "floatw", "-e", "neomutt", NULL };
 static const char *slack[]              = { "st", "-c", "floatw", "-e", "weechat", NULL };
-static const char *alsa[]               = { "st", "-c", "floatw", "-e", "alsamixer", NULL };
+static const char *pulse[]              = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
 static const char *firefox[]            = { "firefox", NULL };
 
 static Key keys[] = {

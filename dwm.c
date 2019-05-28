@@ -143,6 +143,7 @@ typedef struct {
 	unsigned int tags;
 	int iscentered;
 	int isfloating;
+	int w, h;
 	int monitor;
 } Rule;
 
@@ -319,6 +320,8 @@ applyrules(Client *c)
 		{
 			c->iscentered = r->iscentered;
 			c->isfloating = r->isfloating;
+			c->w = r->w;
+			c->h = r->h;
 			c->tags |= r->tags;
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
