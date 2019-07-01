@@ -62,3 +62,4 @@ and (re)compiling the source code.
 
 ## Added layouts
 - [Grid Layout](https://dwm.suckless.org/patches/gridmode/dwm-gridmode-20170909-ceac8c9.diff) in which the windows are arranged in a grid of equal sizes.
+- [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/dwm-centeredmaster-6.1.diff): Centered master layout
