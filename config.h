@@ -5,23 +5,25 @@
 #define XF86AudioRaiseVolume    0x1008ff13
 
 /* appearance */
-static const unsigned int borderpx      = 2;	/* border pixel of windows */
-static const unsigned int gappx         = 5;	/* gaps between windows */
-static const unsigned int snap          = 32;	/* snap pixel */
-static const int showbar                = 1;	/* 0 means no bar */
-static const int topbar                 = 1;	/* 0 means bottom bar */
-static const int horizpadbar            = 6;	/* horizontal padding for statusbar */
-static const int vertpadbar             = 0;	/* vertical padding for statusbar */
-static const char *fonts[]              = { "monospace:size=17" };
-static const char dmenufont[]           = "monospace:size=17";
-static const char col_gray1[]           = "#222222";
-static const char col_gray2[]           = "#444444";
-static const char col_gray3[]           = "#bbbbbb";
-static const char col_gray4[]           = "#eeeeee";
-static const char col_cyan[]            = "#005577";
-static const unsigned int baralpha      = 0xd0;
-static const unsigned int borderalpha   = OPAQUE;
-static const char *colors[][3]          = {
+static const unsigned int borderpx           = 2;    /* border pixel of windows */
+static const unsigned int gappx              = 5;    /* gaps between windows */
+static const unsigned int corner_radius      = 8;    /* rounded corner radius */
+static const unsigned int round_non_floating = 1;
+static const unsigned int snap               = 32;   /* snap pixel */
+static const int showbar                     = 1;    /* 0 means no bar */
+static const int topbar                      = 1;    /* 0 means bottom bar */
+static const int horizpadbar                 = 6;    /* horizontal padding for statusbar */
+static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
+static const char *fonts[]                   = { "monospace:size=17" };
+static const char dmenufont[]                = "monospace:size=17";
+static const char col_gray1[]                = "#222222";
+static const char col_gray2[]                = "#444444";
+static const char col_gray3[]                = "#bbbbbb";
+static const char col_gray4[]                = "#eeeeee";
+static const char col_cyan[]                 = "#005577";
+static const unsigned int baralpha           = 0xd0;
+static const unsigned int borderalpha        = OPAQUE;
+static const char *colors[][3]               = {
 	/*                  fg          bg          border      */
 	[SchemeNorm] = {    col_gray3,  col_gray1,  col_gray2   },
 	[SchemeSel]  = {    col_gray4,  col_cyan,   col_cyan    },
