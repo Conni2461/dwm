@@ -1131,7 +1131,6 @@ manage(Window w, XWindowAttributes *wa)
 		c->x = (c->mon->mw - WIDTH(c)) / 2;
 		c->y = (c->mon->mh - HEIGHT(c)) / 2;
 	}
-	drawroundedcorners(c);
 
 	wc.border_width = c->bw;
 	XConfigureWindow(dpy, w, CWBorderWidth, &wc);
@@ -1157,6 +1156,7 @@ manage(Window w, XWindowAttributes *wa)
 	c->mon->sel = c;
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
+	drawroundedcorners(c);
 	focus(NULL);
 }
 

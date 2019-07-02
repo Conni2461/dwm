@@ -5,7 +5,7 @@
 #define XF86AudioRaiseVolume    0x1008ff13
 
 /* appearance */
-static const unsigned int borderpx           = 2;    /* border pixel of windows */
+static const unsigned int borderpx           = 0;    /* border pixel of windows */
 static const unsigned int gappx              = 5;    /* gaps between windows */
 static const unsigned int corner_radius      = 8;    /* rounded corner radius */
 static const unsigned int round_non_floating = 1;
