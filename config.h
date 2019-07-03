@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx           = 0;    /* border pixel of windows */
-static const unsigned int gappx              = 5;    /* gaps between windows */
+static const unsigned int gappx              = 7;    /* gaps between windows */
 static const unsigned int corner_radius      = 8;    /* rounded corner radius */
 static const unsigned int round_non_floating = 0;
 static const unsigned int snap               = 32;   /* snap pixel */
