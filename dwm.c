@@ -1156,7 +1156,9 @@ manage(Window w, XWindowAttributes *wa)
 	c->mon->sel = c;
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
-	drawroundedcorners(c);
+
+	if(c->isfloating || round_non_floating == 1) drawroundedcorners(c);
+
 	focus(NULL);
 }
 
