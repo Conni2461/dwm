@@ -5,7 +5,7 @@
 #define XF86AudioRaiseVolume    0x1008ff13
 
 /* appearance */
-static const unsigned int borderpx           = 0;    /* border pixel of windows */
+static const unsigned int borderpx           = 2;    /* border pixel of windows */
 static const unsigned int gappx              = 7;    /* gaps between windows */
 static const unsigned int corner_radius      = 8;    /* rounded corner radius */
 static const unsigned int round_non_floating = 0;
@@ -16,17 +16,20 @@ static const int horizpadbar                 = 6;    /* horizontal padding for s
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
 static const char *fonts[]                   = { "monospace:size=17" };
 static const char dmenufont[]                = "monospace:size=17";
-static const char col_gray1[]                = "#222222";
-static const char col_gray2[]                = "#444444";
-static const char col_gray3[]                = "#bbbbbb";
-static const char col_gray4[]                = "#eeeeee";
-static const char col_cyan[]                 = "#005577";
-static const unsigned int baralpha           = 0xd0;
+static const char normbgcolor[]              = "#1c1b19";
+static const char normfgcolor[]              = "#fce8c3";
+static const char normbordercolor[]          = "#1c1b19";
+static const char selfgcolor[]               = "#519f50";
+static const char selbgcolor[]               = "#1c1b19";
+static const char selbordercolor[]           = "#519f50";
+
+static const unsigned int baralpha           = 0xf9;
 static const unsigned int borderalpha        = OPAQUE;
+
 static const char *colors[][3]               = {
-	/*                  fg          bg          border      */
-	[SchemeNorm] = {    col_gray3,  col_gray1,  col_gray2   },
-	[SchemeSel]  = {    col_gray4,  col_cyan,   col_cyan    },
+	/*               fg           bg           border      */
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor   },
+	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor    },
 };
 static const unsigned int alphas[][3] = {
 	/*                  fg          bg          border      */
@@ -79,7 +82,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]       = { "dmenu_run", "-i" , "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[]       = { "dmenu_run", "-i" , "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]        = { "st", NULL };
 static const char *volup[]          = { "volman", "-i", NULL };
 static const char *voldown[]        = { "volman", "-d", NULL };
