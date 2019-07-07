@@ -58,6 +58,7 @@ and (re)compiling the source code.
 - [Attachaside](https://dwm.suckless.org/patches/attachaside/dwm-attachaside-20180126-db22360.diff): Make new clients get attached and focused in the stacking area instead of always becoming the new master.
 - [Cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff): Cycles through all avaiable layouts using MOD-CTRL-, and MOD-CTRL-.
 - [center](https://dwm.suckless.org/patches/center/dwm-center-20160719-56a31dc.diff): Ability to center floating windows
+- [centeredwindowname](http://dwm.suckless.org/patches/centeredwindowname/dwm-centeredwindowname-20180909-6.2.diff): Centered window names
 
 
 ## Added layouts
