@@ -87,7 +87,7 @@ static const char *termcmd[]        = { "st", NULL };
 static const char *volup[]          = { "volman", "-i", NULL };
 static const char *voldown[]        = { "volman", "-d", NULL };
 static const char *voltoggle[]      = { "volman", "-t", NULL };
-static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "pkill -RTMIN+10 dwm", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "xsetroot -name fsignal:1", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *lock[]           = { "lock", NULL };
@@ -171,3 +171,10 @@ static Button buttons[] = {
 	{ ClkTagBar,        MODKEY,     Button3,    toggletag,      {0} },
 };
 
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signum>"` */
+static Signal signals[] = {
+	/* signum       function        argument  */
+	{ 1,            quit,           {0} },
+};
