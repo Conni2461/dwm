@@ -91,12 +91,12 @@ static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dw
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *lock[]           = { "lock", NULL };
+static const char *clipmenu[]       = { "clipmenu", NULL };
 static const char *nnn[]            = { "st", "-c", "floatw", "-e", "nnn", NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
 static const char *slack[]          = { "st", "-c", "floatw", "-e", "weechat", NULL };
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
-static const char *firefox[]        = { "firefox", NULL };
 
 static Key keys[] = {
 	/* modifier             key                     function    argument */
@@ -118,10 +118,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_Return,              zoom,           {0} },
 	{ MODKEY,               XK_Tab,                 view,           {0} },
 	{ MODKEY|ShiftMask,     XK_q,                   killclient,     {0} },
-	{ MODKEY,               XK_t,                   setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,               XK_f,                   setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,               XK_m,                   setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,               XK_g,                   setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ControlMask,   XK_comma,               cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,   XK_period,              cyclelayout,    {.i = +1 } },
 	{ MODKEY,               XK_space,               setlayout,      {0} },
@@ -152,6 +148,15 @@ static Key keys[] = {
 	{ 0,                    XF86AudioRaiseVolume,   spawn,          {.v = volup } },
 	{ 0,                    XF86AudioLowerVolume,   spawn,          {.v = voldown } },
 	{ 0,                    XF86AudioMute,          spawn,          {.v = voltoggle } },
+
+	{ MODKEY,               XK_v,                   spawn,          {.v = clipmenu } },
+
+	{ MODKEY,               XK_z,                   spawn,          {.v = nnn } },
+	{ MODKEY,               XK_n,                   spawn,          {.v = newsboat } },
+	{ MODKEY,               XK_m,                   spawn,          {.v = neomutt } },
+	{ MODKEY,               XK_p,                   spawn,          {.v = slack } },
+	{ MODKEY|ShiftMask,     XK_m,                   spawn,          {.v = pulse } },
+
 };
 
 /* button definitions */
