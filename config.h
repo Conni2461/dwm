@@ -1,8 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
-#define XF86AudioMute           0x1008ff12
-#define XF86AudioLowerVolume    0x1008ff11
-#define XF86AudioRaiseVolume    0x1008ff13
+#define XF86AudioLowerVolume    0x1008FF11
+#define XF86AudioMute           0x1008FF12
+#define XF86AudioRaiseVolume    0x1008FF13
+#define XF86AudioPlay           0x1008FF14
+#define XF86AudioStop           0x1008FF15
+#define XF86AudioPrev           0x1008FF16
+#define XF86AudioNext           0x1008FF17
 
 /* appearance */
 static const unsigned int borderpx           = 2;    /* border pixel of windows */
@@ -84,9 +88,16 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", "-i" , "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]        = { "st", NULL };
+
 static const char *volup[]          = { "volman", "-i", NULL };
 static const char *voldown[]        = { "volman", "-d", NULL };
 static const char *voltoggle[]      = { "volman", "-t", NULL };
+
+static const char *spplay[]         = { "sp", "play", NULL };
+static const char *spstop[]         = { "sp", "pause", NULL };
+static const char *spprev[]         = { "sp", "prev", NULL };
+static const char *spnext[]         = { "sp", "next", NULL };
+
 static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "xsetroot -name fsignal:1", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
@@ -146,9 +157,15 @@ static Key keys[] = {
 	{ DMODKEY,              XK_x,                   spawn,              {.v = shutdowncmd } },
 	{ DMODKEY,              XK_y,                   spawn,              {.v = lock} },
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
+
 	{ 0,                    XF86AudioRaiseVolume,   spawn,              {.v = volup } },
 	{ 0,                    XF86AudioLowerVolume,   spawn,              {.v = voldown } },
 	{ 0,                    XF86AudioMute,          spawn,              {.v = voltoggle } },
+
+	{ 0,                    XF86AudioPlay,          spawn,              {.v = spplay } },
+	{ 0,                    XF86AudioStop,          spawn,              {.v = spstop } },
+	{ 0,                    XF86AudioPrev,          spawn,              {.v = spprev } },
+	{ 0,                    XF86AudioNext,          spawn,              {.v = spnext } },
 
 	{ MODKEY,               XK_v,                   spawn,              {.v = clipmenu } },
 
