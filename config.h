@@ -10,7 +10,7 @@
 
 /* appearance */
 static const unsigned int borderpx           = 2;    /* border pixel of windows */
-static const unsigned int gappx              = 7;    /* gaps between windows */
+static const unsigned int gappx              = 5;    /* gaps between windows */
 static const unsigned int corner_radius      = 8;    /* rounded corner radius */
 static const unsigned int round_non_floating = 0;
 static const unsigned int snap               = 32;   /* snap pixel */
@@ -126,12 +126,15 @@ static Key keys[] = {
 	{ MODKEY,               XK_o,                   incnmaster,         {.i = -1 } },
 	{ MODKEY,               XK_h,                   setmfact,           {.f = -0.05} },
 	{ MODKEY,               XK_l,                   setmfact,           {.f = +0.05} },
+	{ MODKEY,               XK_Right,               setmfact,           {.f = -0.05} },
+	{ MODKEY,               XK_Left,                setmfact,           {.f = +0.05} },
 	{ MODKEY|ShiftMask,     XK_Return,              zoom,               {0} },
 	{ MODKEY,               XK_Tab,                 view,               {0} },
 	{ MODKEY|ShiftMask,     XK_q,                   killclient,         {0} },
 	{ MODKEY|ControlMask,   XK_comma,               cyclelayout,        {.i = -1 } },
 	{ MODKEY|ControlMask,   XK_period,              cyclelayout,        {.i = +1 } },
-	{ MODKEY|ShiftMask,     XK_f,                   togglefullscreen,   {0} },
+	{ MODKEY,               XK_f,                   togglefullscreen,   {0} },
+	{ MODKEY,               XK_c,                   setcentered,        {0} },
 	{ MODKEY,               XK_space,               setlayout,          {0} },
 	{ MODKEY|ShiftMask,     XK_space,               togglefloating,     {0} },
 	{ MODKEY,               XK_0,                   view,               {.ui = ~0 } },
