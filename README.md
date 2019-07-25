@@ -62,6 +62,7 @@ and (re)compiling the source code.
 - [fsignal](https://dwm.suckless.org/patches/fsignal/dwm-fsignal-6.1.diff): Send signals to dwm with xsetroot -name "fsignal:1". Number 1 can be changed to any number > 0
 - [togglefullscreen](https://lists.suckless.org/dev/att-27712/dwm-6.1-togglefullscreen.diff)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/dwm-statusallmons-20160731-56a31dc.diff)
+- [noborder](https://dwm.suckless.org/patches/noborder/dwm-noborder-6.2.diff)
 
 
 ## Added layouts
