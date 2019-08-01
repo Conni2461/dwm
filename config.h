@@ -101,6 +101,7 @@ static const char *spnext[]         = { "sp", "next", NULL };
 static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "xsetroot -name fsignal:1", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *lock[]           = { "lock", NULL };
 static const char *clipmenu[]       = { "clipmenu", NULL };
 static const char *nnn[]            = { "st", "-c", "floatw", "-e", "nnn", NULL };
@@ -158,7 +159,8 @@ static Key keys[] = {
 
 	{ DMODKEY,              XK_e,                   spawn,              {.v = exitdwm } },
 	{ DMODKEY,              XK_x,                   spawn,              {.v = shutdowncmd } },
-	{ DMODKEY,              XK_y,                   spawn,              {.v = lock} },
+	{ DMODKEY,              XK_y,                   spawn,              {.v = suspend } },
+	{ MODKEY,               XK_y,                   spawn,              {.v = lock} },
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
 
 	{ 0,                    XF86AudioRaiseVolume,   spawn,              {.v = volup } },
