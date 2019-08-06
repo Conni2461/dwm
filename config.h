@@ -23,9 +23,9 @@ static const char dmenufont[]                = "monospace:size=17";
 static const char normbgcolor[]              = "#1c1b19";
 static const char normfgcolor[]              = "#fce8c3";
 static const char normbordercolor[]          = "#1c1b19";
-static const char selfgcolor[]               = "#519f50";
+static const char selfgcolor[]               = "#cc6666";
 static const char selbgcolor[]               = "#1c1b19";
-static const char selbordercolor[]           = "#519f50";
+static const char selbordercolor[]           = "#cc6666";
 
 static const unsigned int baralpha           = 0xf9;
 static const unsigned int borderalpha        = OPAQUE;
