@@ -2,3 +2,6 @@ dwm
 *.o
 *.orig
 *.rej
+tags
+
+*.ccls-cache/

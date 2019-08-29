@@ -18,8 +18,8 @@ static const int showbar                     = 1;    /* 0 means no bar */
 static const int topbar                      = 1;    /* 0 means bottom bar */
 static const int horizpadbar                 = 6;    /* horizontal padding for statusbar */
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
-static const char *fonts[]                   = { "monospace:size=17" };
-static const char dmenufont[]                = "monospace:size=17";
+static const char *fonts[]                   = { "monospace:size=10" };
+static const char dmenufont[]                = "monospace:size=10";
 static const char normbgcolor[]              = "#1c1b19";
 static const char normfgcolor[]              = "#fce8c3";
 static const char normbordercolor[]          = "#1c1b19";
@@ -27,7 +27,7 @@ static const char selfgcolor[]               = "#cc6666";
 static const char selbgcolor[]               = "#1c1b19";
 static const char selbordercolor[]           = "#cc6666";
 
-static const unsigned int baralpha           = 0xf9;
+static const unsigned int baralpha           = 0xd8;
 static const unsigned int borderalpha        = OPAQUE;
 
 static const char *colors[][3]               = {
@@ -49,10 +49,13 @@ static const Rule rules[] = {
 	 *  WM_CLASS(STRING) = instance, class
 	 *  WM_NAME(STRING) = title
 	 */
-	/* class            instance    title       tags mask   iscentered  isfloating  width       height  monitor */
-	{ "floatw",         NULL,       NULL,       0,          1,          1,          2000,       1000,   -1 },
-	{ "Nitrogen",       NULL,       NULL,       0,          1,          1,          2000,       1000,   -1 },
-	{ "Lxappearance",   NULL,       NULL,       0,          1,          1,          2000,       1000,   -1 },
+	/* class            instance    title           tags mask   iscentered  isfloating  width       height  monitor */
+	{ "floatw",         NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
+	{ "Nitrogen",       NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
+	{ "Lxappearance",   NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
+	{ "Steam",          NULL,       "Steam - News", 0,          1,          1,          1280,       720,    -1 },
+	{ "Steam",          NULL,       "Friends List", 0,          1,          1,          1280,       720,    -1 },
+	{ "firefox",        NULL,       "Library",      0,          1,          1,          1280,       720,    -1 },
 };
 
 /* layout(s) */
