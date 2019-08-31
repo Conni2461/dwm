@@ -52,7 +52,7 @@ and (re)compiling the source code.
 
 - [Alpha](https://dwm.suckless.org/patches/alpha/dwm-alpha-20180613-b69c870.diff): Allow dwm to have translucent bars, while keeping all the text on it opaque
 - [Autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff): This patch will make dwm run "\~/.dwm/autostart_blocking.sh" and "\~/.dwm/autostart.sh &" before entering the handler loop. One or both of these files can be ommited. Be aware that dwm will not startup as long as autostart_blocking.sh is running and will stay completely unresponsive.
-- [Fullgaps](https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-6.2.diff): Added gaps to dwm. Change gap size in config.h
+- [Ru_gaps](https://dwm.suckless.org/patches/ru_gaps/dwm-ru_gaps-6.2.diff): Added gaps to dwm and removes gaps and borders when in monocle mode. Change gap size in config.h
 - [Statuspadding](https://dwm.suckless.org/patches/statuspadding/dwm-statuspadding-20150524-c8e9479.diff): This makes the amount of horizontal and vertical padding in the status bar into configurable options.
 - [Rotatestack](https://dwm.suckless.org/patches/rotatestack/dwm-rotatestack-20161021-ab9571b.diff): Stack rotation moves a client from the bottom to the top of the stack (or the other way round). This effectively rotates the clients by one position clockwise (or CCW, respectively).
 - [Attachaside](https://dwm.suckless.org/patches/attachaside/dwm-attachaside-20180126-db22360.diff): Make new clients get attached and focused in the stacking area instead of always becoming the new master.
@@ -62,7 +62,6 @@ and (re)compiling the source code.
 - [fsignal](https://dwm.suckless.org/patches/fsignal/dwm-fsignal-6.1.diff): Send signals to dwm with xsetroot -name "fsignal:1". Number 1 can be changed to any number > 0
 - [togglefullscreen](https://lists.suckless.org/dev/att-27712/dwm-6.1-togglefullscreen.diff)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/dwm-statusallmons-20160731-56a31dc.diff)
-- [noborder](https://dwm.suckless.org/patches/noborder/dwm-noborder-6.2.diff)
 
 
 ## Added layouts
