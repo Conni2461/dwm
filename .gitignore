@@ -4,4 +4,4 @@ dwm
 *.rej
 tags
 
-*.ccls-cache/
+.ccls-cache/
