@@ -113,6 +113,8 @@ static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", N
 static const char *slack[]          = { "st", "-c", "floatw", "-e", "weechat", NULL };
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
 
+static const char *screenshot[]     = { "flameshot", "gui", NULL };
+
 static Key keys[] = {
 	/* modifier             key                     function            argument */
 	{ MODKEY,               XK_d,                   spawn,              {.v = dmenucmd } },
@@ -183,6 +185,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_p,                   spawn,              {.v = slack } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
 
+	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} }
 };
 
 /* button definitions */
