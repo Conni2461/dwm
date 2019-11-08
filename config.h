@@ -107,13 +107,12 @@ static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?
 static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *lock[]           = { "lock", NULL };
 static const char *clipmenu[]       = { "clipmenu", NULL };
-static const char *nnn[]            = { "st", "-c", "floatw", "-e", "nnn", NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
-static const char *slack[]          = { "st", "-c", "floatw", "-e", "weechat", NULL };
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
 
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
+static const char *readpdf[]        = { "pfr", NULL };
 
 static Key keys[] = {
 	/* modifier             key                     function            argument */
@@ -179,10 +178,9 @@ static Key keys[] = {
 
 	{ MODKEY,               XK_v,                   spawn,              {.v = clipmenu } },
 
-	{ MODKEY,               XK_z,                   spawn,              {.v = nnn } },
 	{ MODKEY,               XK_n,                   spawn,              {.v = newsboat } },
 	{ MODKEY,               XK_m,                   spawn,              {.v = neomutt } },
-	{ MODKEY,               XK_p,                   spawn,              {.v = slack } },
+	{ MODKEY,               XK_p,                   spawn,              {.v = readpdf } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
 
 	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} }
