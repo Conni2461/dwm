@@ -112,7 +112,8 @@ static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", N
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
 
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
-static const char *readpdf[]        = { "pfr", NULL };
+static const char *readpdf[]        = { "pfr", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *openpage[]       = { "openfirefox", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 static Key keys[] = {
 	/* modifier             key                     function            argument */
@@ -181,6 +182,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_n,                   spawn,              {.v = newsboat } },
 	{ MODKEY,               XK_m,                   spawn,              {.v = neomutt } },
 	{ MODKEY,               XK_p,                   spawn,              {.v = readpdf } },
+	{ MODKEY,               XK_z,                   spawn,              {.v = openpage } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
 
 	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} }
