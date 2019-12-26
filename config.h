@@ -56,6 +56,7 @@ static const Rule rules[] = {
 	{ "Steam",          NULL,       "Steam - News", 0,          1,          1,          1280,       720,    -1 },
 	{ "Steam",          NULL,       "Friends List", 0,          1,          1,          1280,       720,    -1 },
 	{ "firefox",        NULL,       "Library",      0,          1,          1,          1280,       720,    -1 },
+	{ "nextcloud",      NULL,       NULL,           1 << 8,     1,          1,             0,         0,    -1 },
 };
 
 /* layout(s) */
