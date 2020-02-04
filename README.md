@@ -59,7 +59,7 @@ and (re)compiling the source code.
 - [Cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff): Cycles through all avaiable layouts using MOD-CTRL-, and MOD-CTRL-.
 - [center](https://dwm.suckless.org/patches/center/dwm-center-20160719-56a31dc.diff): Ability to center floating windows
 - [centeredwindowname](http://dwm.suckless.org/patches/centeredwindowname/dwm-centeredwindowname-20180909-6.2.diff): Centered window names
-- [fsignal](https://dwm.suckless.org/patches/fsignal/dwm-fsignal-6.1.diff): Send signals to dwm with xsetroot -name "fsignal:1". Number 1 can be changed to any number > 0
+- [dwmc](https://dwm.suckless.org/patches/dwmc/dwm-dwmc-6.2.diff): Simple dwmc client using a fork of fsignal to communicate with dwm.
 - [togglefullscreen](https://lists.suckless.org/dev/att-27712/dwm-6.1-togglefullscreen.diff)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/dwm-statusallmons-20160731-56a31dc.diff)
 - [pertag](https://dwm.suckless.org/patches/pertag/dwm-pertag-20170513-ceac8c9.diff)

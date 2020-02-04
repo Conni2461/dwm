@@ -102,7 +102,7 @@ static const char *spstop[]         = { "sp", "pause", NULL };
 static const char *spprev[]         = { "sp", "prev", NULL };
 static const char *spnext[]         = { "sp", "next", NULL };
 
-static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "xsetroot -name fsignal:1", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
@@ -206,10 +206,73 @@ static Button buttons[] = {
 	{ ClkTagBar,        MODKEY,     Button3,    toggletag,      {0} },
 };
 
+void
+setlayoutex(const Arg *arg)
+{
+	setlayout(&((Arg) { .v = &layouts[arg->i] }));
+}
+
+void
+viewex(const Arg *arg)
+{
+	view(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+viewall(const Arg *arg)
+{
+	view(&((Arg){.ui = ~0}));
+}
+
+void
+toggleviewex(const Arg *arg)
+{
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+tagex(const Arg *arg)
+{
+	tag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+toggletagex(const Arg *arg)
+{
+	toggletag(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+tagall(const Arg *arg)
+{
+	tag(&((Arg){.ui = ~0}));
+}
+
 /* signal definitions */
 /* signum must be greater than 0 */
-/* trigger signals using `xsetroot -name "fsignal:<signum>"` */
+/* trigger signals using `xsetroot -name "fsignal:<signame> [<type> <value>]"` */
 static Signal signals[] = {
-	/* signum       function        argument  */
-	{ 1,            quit,           {0} },
+	/* signum           function */
+	{ "focusstack",     focusstack },
+	{ "setmfact",       setmfact },
+	{ "togglebar",      togglebar },
+	{ "incnmaster",     incnmaster },
+	{ "togglefloating", togglefloating },
+	{ "focusmon",       focusmon },
+	{ "tagmon",         tagmon },
+	{ "zoom",           zoom },
+	{ "view",           view },
+	{ "viewall",        viewall },
+	{ "viewex",         viewex },
+	{ "toggleview",     view },
+	{ "toggleviewex",   toggleviewex },
+	{ "tag",            tag },
+	{ "tagall",         tagall },
+	{ "tagex",          tagex },
+	{ "toggletag",      tag },
+	{ "toggletagex",    toggletagex },
+	{ "killclient",     killclient },
+	{ "quit",           quit },
+	{ "setlayout",      setlayout },
+	{ "setlayoutex",    setlayoutex },
 };
