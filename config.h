@@ -20,8 +20,8 @@ static const int horizpadbar                 = 6;    /* horizontal padding for s
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
 static const int vertpad                     = 5;   /* vertical padding of bar */
 static const int sidepad                     = 5;   /* horizontal padding of bar */
-static const char *fonts[]                   = { "monospace:size=10" };
-static const char dmenufont[]                = "monospace:size=11";
+static const char *fonts[]                   = { "monospace:size=12" };
+static const char dmenufont[]                = "monospace:size=13";
 static const char normbgcolor[]              = "#1c1b19";
 static const char normfgcolor[]              = "#fce8c3";
 static const char normbordercolor[]          = "#1c1b19";
