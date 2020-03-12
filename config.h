@@ -16,10 +16,11 @@ static const unsigned int round_non_floating = 0;
 static const unsigned int snap               = 32;   /* snap pixel */
 static const int showbar                     = 1;    /* 0 means no bar */
 static const int topbar                      = 1;    /* 0 means bottom bar */
+static const int singlegap                   = 0;    /* 1 means gap with one window open*/
 static const int horizpadbar                 = 6;    /* horizontal padding for statusbar */
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
-static const int vertpad                     = 5;   /* vertical padding of bar */
-static const int sidepad                     = 5;   /* horizontal padding of bar */
+static const int vertpad                     = 0;    /* vertical padding of bar */
+static const int sidepad                     = 0;    /* horizontal padding of bar */
 static const char *fonts[]                   = { "monospace:size=12" };
 static const char dmenufont[]                = "monospace:size=12";
 static const char normbgcolor[]              = "#1d1f21";

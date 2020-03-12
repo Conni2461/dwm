@@ -1949,6 +1949,11 @@ tile(Monitor *m)
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)
 		return;
+	if (n == 1 && singlegap == 0) {
+		c = nexttiled(m->clients);
+		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
+		return;
+	}
 
 	if (n > m->nmaster) {
 		mw = m->nmaster ? m->ww * m->mfact : 0;
