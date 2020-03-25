@@ -51,7 +51,7 @@ and (re)compiling the source code.
 ## Applied Patches
 
 - [Alpha](https://dwm.suckless.org/patches/alpha/dwm-alpha-20180613-b69c870.diff): Allow dwm to have translucent bars, while keeping all the text on it opaque
-- [Autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff): This patch will make dwm run "\~/.dwm/autostart_blocking.sh" and "\~/.dwm/autostart.sh &" before entering the handler loop. One or both of these files can be ommited. Be aware that dwm will not startup as long as autostart_blocking.sh is running and will stay completely unresponsive.
+- [Autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff): This patch will make dwm run "\~/.config/dwm/autostart_blocking.sh" and "\~/.config/dwm/autostart.sh &" before entering the handler loop. One or both of these files can be ommited. Be aware that dwm will not startup as long as autostart_blocking.sh is running and will stay completely unresponsive.
 - [Ru_gaps](https://dwm.suckless.org/patches/ru_gaps/dwm-ru_gaps-6.2.diff): Added gaps to dwm and removes gaps and borders when in monocle mode. Change gap size in config.h
 - [Statuspadding](https://dwm.suckless.org/patches/statuspadding/dwm-statuspadding-20150524-c8e9479.diff): This makes the amount of horizontal and vertical padding in the status bar into configurable options.
 - [barpadding](https://dwm.suckless.org/patches/barpadding/dwm-barpadding-6.2.diff): This patch adds variables for verticle and horizontal space between the statusbar and the edge of the screen.
