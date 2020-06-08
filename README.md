@@ -64,6 +64,7 @@ and (re)compiling the source code.
 - [togglefullscreen](https://lists.suckless.org/dev/att-27712/dwm-6.1-togglefullscreen.diff)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/dwm-statusallmons-20160731-56a31dc.diff)
 - [pertag](https://dwm.suckless.org/patches/pertag/dwm-pertag-20170513-ceac8c9.diff)
+- [swallow](https://dwm.suckless.org/patches/swallow/dwm-swallow-20200522-7accbcf.diff)
 
 
 ## Added layouts

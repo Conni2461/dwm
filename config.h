@@ -14,6 +14,7 @@ static const unsigned int gappx              = 5;    /* gaps between windows */
 static const unsigned int corner_radius      = 8;    /* rounded corner radius */
 static const unsigned int round_non_floating = 0;
 static const unsigned int snap               = 32;   /* snap pixel */
+static const int swallowfloating             = 0;    /* 1 means swallow floating windows by default */
 static const int showbar                     = 1;    /* 0 means no bar */
 static const int topbar                      = 1;    /* 0 means bottom bar */
 static const int singlegap                   = 0;    /* 1 means gap with one window open*/
@@ -61,14 +62,16 @@ static const Rule rules[] = {
 	 *  WM_CLASS(STRING) = instance, class
 	 *  WM_NAME(STRING) = title
 	 */
-	/* class            instance    title           tags mask   iscentered  isfloating  width       height  monitor */
-	{ "floatw",         NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
-	{ "Nitrogen",       NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
-	{ "Lxappearance",   NULL,       NULL,           0,          1,          1,          1280,       720,    -1 },
-	{ "Steam",          NULL,       "Steam - News", 0,          1,          1,          1280,       720,    -1 },
-	{ "Steam",          NULL,       "Friends List", 0,          1,          1,          1280,       720,    -1 },
-	{ "firefox",        NULL,       "Library",      0,          1,          1,          1280,       720,    -1 },
-	{ "nextcloud",      NULL,       NULL,           1 << 8,     1,          1,             0,         0,    -1 },
+	/* class            instance    title           tags mask   iscentered  isfloating  isterminal  noswallow   width       height  monitor */
+	{ "floatw",         NULL,       NULL,           0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "Nitrogen",       NULL,       NULL,           0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "Lxappearance",   NULL,       NULL,           0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "Steam",          NULL,       "Steam - News", 0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "Steam",          NULL,       "Friends List", 0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "firefox",        NULL,       "Library",      0,          1,          1,          0,          -1,         1280,       720,    -1 },
+	{ "nextcloud",      NULL,       NULL,           1 << 8,     1,          1,          0,          -1,         0,          0,      -1 },
+	{ "st",             NULL,       NULL,           0,          0,          0,          1,          -1,         0,          0,      -1 },
+	{ NULL,             NULL,       "Event Tester", 0,          0,          1,          0,           1,         0,          0,      -1 }, /* xev */
 };
 
 /* layout(s) */
