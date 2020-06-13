@@ -131,6 +131,8 @@ static const char *screenshot[]     = { "flameshot", "gui", NULL };
 static const char *readpdf[]        = { "pfr", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
 static const char *openpage[]       = { "openfirefox", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
 
+static const char *dmenuunicode[]   = { "dmenuunicode", "-i", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
+
 static Key keys[] = {
 	/* modifier             key                     function            argument */
 	{ MODKEY,               XK_d,                   spawn,              {.v = dmenucmd } },
@@ -201,7 +203,8 @@ static Key keys[] = {
 	{ MODKEY,               XK_z,                   spawn,              {.v = openpage } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
 
-	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} }
+	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} },
+	{ MODKEY|ShiftMask,     XK_acute,               spawn,              {.v = dmenuunicode} }
 };
 
 /* button definitions */
