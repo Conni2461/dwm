@@ -22,8 +22,8 @@ static const int horizpadbar                 = 6;    /* horizontal padding for s
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
 static const int vertpad                     = 0;    /* vertical padding of bar */
 static const int sidepad                     = 0;    /* horizontal padding of bar */
-static const char *fonts[]                   = { "monospace:size=10", "JoyPixels:pixelsize=8:antialias=true:autohint=true" };
-static const char dmenufont[]                = "monospace:size=10 JoyPixels:pixelsize=8:antialias=true:autohint=true";
+static const char *fonts[]                   = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static const char dmenufont[]                = "monospace:size=10 JoyPixels:pixelsize=10:antialias=true:autohint=true";
 static const char normbgcolor[]              = "#1d1f21";
 static const char normfgcolor[]              = "#ffffff";
 static const char normbordercolor[]          = "#1d1f21";
