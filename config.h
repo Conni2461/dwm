@@ -122,6 +122,8 @@ static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdow
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
 static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
 static const char *lock[]           = { "lock", NULL };
+static const char *randback[]       = { "randback", NULL };
+
 static const char *clipmenu[]       = { "clipmenu", NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
@@ -185,6 +187,7 @@ static Key keys[] = {
 	{ DMODKEY,              XK_y,                   spawn,              {.v = suspend } },
 	{ MODKEY,               XK_y,                   spawn,              {.v = lock} },
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
+	{ MODKEY|ShiftMask,     XK_r,                   spawn,              {.v = randback } },
 
 	{ 0,                    XF86AudioRaiseVolume,   spawn,              {.v = volup } },
 	{ 0,                    XF86AudioLowerVolume,   spawn,              {.v = voldown } },
