@@ -1,12 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#define XF86AudioLowerVolume    0x1008FF11
-#define XF86AudioMute           0x1008FF12
-#define XF86AudioRaiseVolume    0x1008FF13
-#define XF86AudioPlay           0x1008FF14
-#define XF86AudioStop           0x1008FF15
-#define XF86AudioPrev           0x1008FF16
-#define XF86AudioNext           0x1008FF17
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx           = 2;    /* border pixel of windows */
@@ -113,7 +107,7 @@ static const char *voldown[]        = { "volman", "-d", NULL };
 static const char *voltoggle[]      = { "volman", "-t", NULL };
 
 static const char *spplay[]         = { "sp", "play", NULL };
-static const char *spstop[]         = { "sp", "pause", NULL };
+static const char *sppause[]        = { "sp", "pause", NULL };
 static const char *spprev[]         = { "sp", "prev", NULL };
 static const char *spnext[]         = { "sp", "next", NULL };
 
@@ -189,14 +183,15 @@ static Key keys[] = {
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
 	{ MODKEY|ShiftMask,     XK_r,                   spawn,              {.v = randback } },
 
-	{ 0,                    XF86AudioRaiseVolume,   spawn,              {.v = volup } },
-	{ 0,                    XF86AudioLowerVolume,   spawn,              {.v = voldown } },
-	{ 0,                    XF86AudioMute,          spawn,              {.v = voltoggle } },
+	{ 0,                    XF86XK_AudioRaiseVolume,spawn,              {.v = volup } },
+	{ 0,                    XF86XK_AudioLowerVolume,spawn,              {.v = voldown } },
+	{ 0,                    XF86XK_AudioMute,       spawn,              {.v = voltoggle } },
 
-	{ 0,                    XF86AudioPlay,          spawn,              {.v = spplay } },
-	{ 0,                    XF86AudioStop,          spawn,              {.v = spstop } },
-	{ 0,                    XF86AudioPrev,          spawn,              {.v = spprev } },
-	{ 0,                    XF86AudioNext,          spawn,              {.v = spnext } },
+	{ 0,                    XF86XK_AudioPlay,       spawn,              {.v = spplay } },
+	{ 0,                    XF86XK_AudioPause,      spawn,              {.v = sppause } },
+	{ 0,                    XF86XK_AudioStop,       spawn,              {.v = sppause } },
+	{ 0,                    XF86XK_AudioPrev,       spawn,              {.v = spprev } },
+	{ 0,                    XF86XK_AudioNext,       spawn,              {.v = spnext } },
 
 	{ MODKEY,               XK_v,                   spawn,              {.v = clipmenu } },
 
