@@ -122,6 +122,7 @@ static const char *clipmenu[]       = { "clipmenu", NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
+static const char *calculator[]     = { "st", "-c", "floatw", "-e", "R", "-q", "--save", NULL };
 
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
 static const char *readpdf[]        = { "pfr", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
@@ -200,6 +201,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_p,                   spawn,              {.v = readpdf } },
 	{ MODKEY,               XK_z,                   spawn,              {.v = openpage } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
+	{ MODKEY,               XK_g,                   spawn,              {.v = calculator } },
 
 	{ MODKEY,               XK_Print,               spawn,              {.v = screenshot} },
 	{ MODKEY|ShiftMask,     XK_acute,               spawn,              {.v = dmenuunicode} }
