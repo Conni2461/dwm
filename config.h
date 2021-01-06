@@ -19,7 +19,7 @@ static const int sidepad                     = 0;    /* horizontal padding of ba
 static const char *fonts[]                   = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static const char dmenufont[]                = "monospace:size=10 JoyPixels:pixelsize=10:antialias=true:autohint=true";
 static const char normbgcolor[]              = "#1d1f21";
-static const char normfgcolor[]              = "#ffffff";
+static const char normfgcolor[]              = "#c5c8c6";
 static const char normbordercolor[]          = "#1d1f21";
 static const char selfgcolor[]               = "#cc6666";
 static const char selbgcolor[]               = "#1d1f21";
@@ -106,10 +106,9 @@ static const char *volup[]          = { "volman", "-i", NULL };
 static const char *voldown[]        = { "volman", "-d", NULL };
 static const char *voltoggle[]      = { "volman", "-t", NULL };
 
-static const char *spplay[]         = { "sp", "play", NULL };
-static const char *sppause[]        = { "sp", "pause", NULL };
-static const char *spprev[]         = { "sp", "prev", NULL };
-static const char *spnext[]         = { "sp", "next", NULL };
+static const char *sptplay[]         = { "spt", "playback", "--toggle", NULL };
+static const char *sptprev[]         = { "spt", "playback", "--previous", NULL };
+static const char *sptnext[]         = { "spt", "playback", "--next", NULL };
 
 static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
@@ -188,11 +187,11 @@ static Key keys[] = {
 	{ 0,                    XF86XK_AudioLowerVolume,spawn,              {.v = voldown } },
 	{ 0,                    XF86XK_AudioMute,       spawn,              {.v = voltoggle } },
 
-	{ 0,                    XF86XK_AudioPlay,       spawn,              {.v = spplay } },
-	{ 0,                    XF86XK_AudioPause,      spawn,              {.v = sppause } },
-	{ 0,                    XF86XK_AudioStop,       spawn,              {.v = sppause } },
-	{ 0,                    XF86XK_AudioPrev,       spawn,              {.v = spprev } },
-	{ 0,                    XF86XK_AudioNext,       spawn,              {.v = spnext } },
+	{ 0,                    XF86XK_AudioPlay,       spawn,              {.v = sptplay } },
+	{ 0,                    XF86XK_AudioPause,      spawn,              {.v = sptplay } },
+	{ 0,                    XF86XK_AudioStop,       spawn,              {.v = sptplay } },
+	{ 0,                    XF86XK_AudioPrev,       spawn,              {.v = sptprev } },
+	{ 0,                    XF86XK_AudioNext,       spawn,              {.v = sptnext } },
 
 	{ MODKEY,               XK_v,                   spawn,              {.v = clipmenu } },
 
