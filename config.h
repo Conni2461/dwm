@@ -16,8 +16,8 @@ static const int horizpadbar                 = 6;    /* horizontal padding for s
 static const int vertpadbar                  = 0;    /* vertical padding for statusbar */
 static const int vertpad                     = 0;    /* vertical padding of bar */
 static const int sidepad                     = 0;    /* horizontal padding of bar */
-static const char *fonts[]                   = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static const char dmenufont[]                = "monospace:size=10 JoyPixels:pixelsize=10:antialias=true:autohint=true";
+static const char *fonts[]                   = { "monospace:size=8", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static const char dmenufont[]                = "monospace:size=8 JoyPixels:pixelsize=10:antialias=true:autohint=true";
 static const char normbgcolor[]              = "#1d1f21";
 static const char normfgcolor[]              = "#c5c8c6";
 static const char normbordercolor[]          = "#1d1f21";
@@ -100,7 +100,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", "-i" , "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
-static const char *termcmd[]        = { "st", NULL };
+static const char *termcmd[]        = { "kitty", NULL };
 
 static const char *volup[]          = { "volman", "-i", NULL };
 static const char *voldown[]        = { "volman", "-d", NULL };
