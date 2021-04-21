@@ -97,9 +97,15 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+#define DMENU_OPTS "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", \
+                   normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor,    \
+                   "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh",  \
+                   dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh",        \
+                   dmenuselfghcolor
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]       = { "dmenu_run", "-i" , "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
+static const char *dmenucmd[]       = { "dmenu_run", "-i" , DMENU_OPTS, NULL };
 static const char *termcmd[]        = { "kitty", NULL };
 
 static const char *volup[]          = { "volman", "-i", NULL };
@@ -110,10 +116,10 @@ static const char *sptplay[]         = { "spt", "playback", "--toggle", NULL };
 static const char *sptprev[]         = { "spt", "playback", "--previous", NULL };
 static const char *sptnext[]         = { "spt", "playback", "--next", NULL };
 
-static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
-static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
-static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
-static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
+static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", DMENU_OPTS, NULL };
+static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", DMENU_OPTS, NULL };
+static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", DMENU_OPTS, NULL };
+static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", DMENU_OPTS, NULL };
 static const char *lock[]           = { "lock", NULL };
 static const char *randback[]       = { "randback", NULL };
 
@@ -124,10 +130,10 @@ static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer"
 static const char *calculator[]     = { "st", "-c", "floatw", "-e", "R", "-q", "--save", NULL };
 
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
-static const char *readpdf[]        = { "pfr", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
-static const char *openpage[]       = { "openfirefox", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
+static const char *readpdf[]        = { "pfr", DMENU_OPTS, NULL };
+static const char *openpage[]       = { "openfirefox", DMENU_OPTS, NULL };
 
-static const char *dmenuunicode[]   = { "dmenuunicode", "-i", "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor, "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh", dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh", dmenuselfghcolor, NULL };
+static const char *dmenuunicode[]   = { "dmenuunicode", "-i", DMENU_OPTS, NULL };
 
 static Key keys[] = {
 	/* modifier             key                     function            argument */
