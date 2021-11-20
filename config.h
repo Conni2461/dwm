@@ -110,9 +110,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]       = { "dmenu_run", "-i" , DMENU_OPTS, NULL };
 static const char *termcmd[]        = { "kitty", NULL };
 
-static const char *volup[]          = { "volman", "-i", NULL };
-static const char *voldown[]        = { "volman", "-d", NULL };
-static const char *voltoggle[]      = { "volman", "-t", NULL };
+static const char *volup[]          = { "pactl", "--", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *voldown[]        = { "pactl", "--", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *voltoggle[]      = { "pactl", "--", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 static const char *sptplay[]         = { "spt", "playback", "--toggle", NULL };
 static const char *sptprev[]         = { "spt", "playback", "--previous", NULL };
@@ -122,18 +122,14 @@ static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dw
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", DMENU_OPTS, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", DMENU_OPTS, NULL };
 static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", DMENU_OPTS, NULL };
-static const char *lock[]           = { "lock", NULL };
-static const char *randback[]       = { "randback", NULL };
+static const char *lock[]           = { "slock", NULL };
 
-static const char *clipmenu[]       = { "clipmenu", NULL };
+static const char *clipmenu[]       = { "clipmenu", DMENU_OPTS, NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
 static const char *pulse[]          = { "st", "-c", "floatw", "-e", "pulsemixer", NULL };
 static const char *calculator[]     = { "st", "-c", "floatw", "-e", "R", "-q", "--save", NULL };
-
 static const char *screenshot[]     = { "flameshot", "gui", NULL };
-static const char *readpdf[]        = { "pfr", DMENU_OPTS, NULL };
-static const char *openpage[]       = { "openfirefox", DMENU_OPTS, NULL };
 
 static const char *dmenuunicode[]   = { "dmenuunicode", "-i", DMENU_OPTS, NULL };
 
@@ -189,7 +185,6 @@ static Key keys[] = {
 	{ DMODKEY,              XK_y,                   spawn,              {.v = suspend } },
 	{ MODKEY,               XK_y,                   spawn,              {.v = lock} },
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
-	{ MODKEY|ShiftMask,     XK_r,                   spawn,              {.v = randback } },
 
 	{ 0,                    XF86XK_AudioRaiseVolume,spawn,              {.v = volup } },
 	{ 0,                    XF86XK_AudioLowerVolume,spawn,              {.v = voldown } },
@@ -205,8 +200,6 @@ static Key keys[] = {
 
 	{ MODKEY,               XK_n,                   spawn,              {.v = newsboat } },
 	{ MODKEY,               XK_m,                   spawn,              {.v = neomutt } },
-	{ MODKEY,               XK_p,                   spawn,              {.v = readpdf } },
-	{ MODKEY,               XK_z,                   spawn,              {.v = openpage } },
 	{ MODKEY|ShiftMask,     XK_m,                   spawn,              {.v = pulse } },
 	{ MODKEY,               XK_g,                   spawn,              {.v = calculator } },
 
