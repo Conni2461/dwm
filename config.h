@@ -114,9 +114,9 @@ static const char *volup[]          = { "pactl", "--", "set-sink-volume", "@DEFA
 static const char *voldown[]        = { "pactl", "--", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *voltoggle[]      = { "pactl", "--", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
-static const char *sptplay[]         = { "spt", "playback", "--toggle", NULL };
-static const char *sptprev[]         = { "spt", "playback", "--previous", NULL };
-static const char *sptnext[]         = { "spt", "playback", "--next", NULL };
+static const char *sptplay[]         = { "playerctl", "play-pause", NULL };
+static const char *sptprev[]         = { "playerctl", "previous", NULL };
+static const char *sptnext[]         = { "playerctl", "next", NULL };
 
 static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", DMENU_OPTS, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", DMENU_OPTS, NULL };
