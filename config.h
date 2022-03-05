@@ -72,7 +72,6 @@ static const Rule rules[] = {
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 
 #include "layouts.c"
@@ -121,7 +120,7 @@ static const char *sptnext[]         = { "playerctl", "next", NULL };
 static const char *exitdwm[]        = { "rdq", "Are you sure you want to exit dwm?", "dwmc quit", DMENU_OPTS, NULL };
 static const char *shutdowncmd[]    = { "rdq", "Are you sure you want to shutdown?", "shutdown -h now", DMENU_OPTS, NULL };
 static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?", "reboot", DMENU_OPTS, NULL };
-static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend", DMENU_OPTS, NULL };
+static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend-then-hibernate", DMENU_OPTS, NULL };
 static const char *lock[]           = { "slock", NULL };
 
 static const char *clipmenu[]       = { "clipmenu", DMENU_OPTS, NULL };
@@ -158,6 +157,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_comma,               cyclelayout,        {.i = -1 } },
 	{ MODKEY|ControlMask,   XK_period,              cyclelayout,        {.i = +1 } },
 	{ MODKEY,               XK_f,                   togglefullscreen,   {0} },
+	{ MODKEY|ShiftMask,     XK_f,                   togglefakefullscreen, {0} },
 	{ MODKEY,               XK_c,                   setcentered,        {0} },
 	{ MODKEY,               XK_space,               setlayout,          {0} },
 	{ MODKEY|ShiftMask,     XK_space,               togglefloating,     {0} },
