@@ -96,7 +96,8 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-#define DMENU_OPTS "-fn", dmenufont, "-h", dmenuheight, "-nb", \
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+#define DMENU_OPTS "-m", dmenumon, "-fn", dmenufont, "-h", dmenuheight, "-nb", \
                    normbgcolor, "-nf", normfgcolor, "-sb", dmenuselbgcolor,    \
                    "-sf", dmenuselfgcolor, "-nbh", dmenunormbghcolor, "-nfh",  \
                    dmenunormfghcolor, "-sbh", dmenuselbghcolor, "-sfh",        \
