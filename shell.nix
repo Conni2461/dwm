@@ -6,6 +6,5 @@ stdenv.mkDerivation {
     xorg.libX11
     xorg.libXinerama
     xorg.libXft
-    libxcb
   ];
 }
