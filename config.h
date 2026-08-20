@@ -119,6 +119,8 @@ static const char *rebootcmd[]      = { "rdq", "Are you sure you want to reboot?
 static const char *suspend[]        = { "rdq", "Are you sure you want to suspend?", "systemctl suspend-then-hibernate", DMENU_OPTS, NULL };
 static const char *lock[]           = { "slock", NULL };
 
+static const char *wakedisplays[]   = { "xset", "dpms", "force", "on", NULL };
+
 static const char *clipmenu[]       = { "clipmenu", DMENU_OPTS, NULL };
 static const char *newsboat[]       = { "st", "-c", "floatw", "-e", "newsboat", NULL };
 static const char *neomutt[]        = { "st", "-c", "floatw", "-e", "neomutt", NULL };
@@ -181,6 +183,7 @@ static const Key keys[] = {
 	{ DMODKEY,              XK_y,                   spawn,              {.v = suspend } },
 	{ MODKEY,               XK_y,                   spawn,              {.v = lock} },
 	{ DMODKEY,              XK_Escape,              spawn,              {.v = rebootcmd } },
+	{ MODKEY,               XK_r,                   spawn,              {.v = wakedisplays } },
 
 	{ 0,                    XF86XK_AudioRaiseVolume,spawn,              {.v = volup } },
 	{ 0,                    XF86XK_AudioLowerVolume,spawn,              {.v = voldown } },
